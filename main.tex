@@ -1,0 +1,60 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+
+\documentclass[degree=master]{thuthesis}
+  % 学位 degree:
+  %   doctor | master | bachelor | postdoc
+  % 学位类型 degree-type:
+  %   academic（默认）| professional
+
+
+% 论文基本配置，加载宏包等全局配置
+\input{thusetup.tex}
+
+
+\begin{document}
+
+% 封面
+% \maketitle
+% 将签字扫描后 scan/title-statement.pdf 文件替换原始页面
+\includepdf[pages=-]{scan/title-statement.pdf}
+% \afterpage{\blankpage}
+
+% 目录
+\frontmatter
+\tableofcontents
+% \clearpage
+
+% 摘要
+\frontmatter
+\input{data/abstract.tex}
+
+% 符号对照表
+% \input{data/denotation}
+
+
+% 正文部分
+\mainmatter
+\input{data/chap01}
+% \afterpage{\blankpage}
+\input{data/chap02}
+% \afterpage{\blankpage}
+
+% 其它部分
+\backmatter
+% \afterpage{\blankpage}
+
+% 参考文献
+\bibliographystyle{thuthesis-numeric}      % 顺序编码制
+\bibliography{ref/refs, ref/appendix}
+% \afterpage{\blankpage}
+
+% 个人简历
+\input{data/resume}
+% \afterpage{\blankpage}
+
+% 致谢
+\input{data/acknowledgements}
+
+\end{document}
